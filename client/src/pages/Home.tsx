@@ -21,7 +21,7 @@ export default function Home() {
   };
 
   // Calendly link
-  const calendlyLink = 'https://calendly.com/YOUR_USERNAME/15min?hide_event_type_details=1&hide_gdpr_block=1';
+  const calendlyLink = 'https://calendly.com/adminscsf/15min?hide_event_type_details=1&hide_gdpr_block=1';
 
   // Load Calendly script
   useEffect(() => {
@@ -161,6 +161,15 @@ export default function Home() {
                   >
                     Schedule Free Consultation
                   </button>
+                  <a
+                    href="https://cdn.manus.space/webdev-static-assets/workflow-builder-demo.mp4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg font-bold text-lg hover:border-slate-400 hover:bg-slate-50 transition"
+                  >
+                    Watch Demo
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </a>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-slate-600">
                   <CheckCircle className="w-5 h-5 text-green-500" />
@@ -422,7 +431,7 @@ export default function Home() {
             </p>
             <div
               className="calendly-inline-widget"
-              data-url="https://calendly.com/YOUR_USERNAME/15min?hide_event_type_details=1&hide_gdpr_block=1"
+              data-url="https://calendly.com/adminscsf/15min?hide_event_type_details=1&hide_gdpr_block=1"
               style={{ minWidth: '320px', height: '630px' }}
             />
           </div>
