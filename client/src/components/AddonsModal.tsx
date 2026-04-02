@@ -20,102 +20,85 @@ interface AddonsModalProps {
 }
 
 const ADDONS: Addon[] = [
-  {
-    id: 'email-org',
-    name: 'Email Organization Bot',
-    category: 'Email',
-    description: 'Automatically organize, categorize, and prioritize emails',
-    useCases: ['Inbox management', 'Spam filtering', 'Priority flagging'],
-    icon: '📧',
-  },
-  {
-    id: 'client-onboard',
-    name: 'Client Onboarding Bot',
-    category: 'Sales',
-    description: 'Automate client welcome sequences and documentation',
-    useCases: ['Welcome emails', 'Document collection', 'Account setup'],
-    icon: '👥',
-  },
-  {
-    id: 'lead-qualify',
-    name: 'Lead Qualification Bot',
-    category: 'Sales',
-    description: 'Score and qualify leads automatically',
-    useCases: ['Lead scoring', 'CRM sync', 'Sales routing'],
-    icon: '🎯',
-  },
-  {
-    id: 'invoice-auto',
-    name: 'Invoice Automation',
-    category: 'Finance',
-    description: 'Generate, send, and track invoices automatically',
-    useCases: ['Invoice generation', 'Payment reminders', 'Expense tracking'],
-    icon: '💰',
-  },
-  {
-    id: 'social-scheduler',
-    name: 'Social Media Scheduler',
-    category: 'Marketing',
-    description: 'Schedule posts across all social platforms',
-    useCases: ['Multi-platform posting', 'Content calendar', 'Engagement tracking'],
-    icon: '📱',
-  },
-  {
-    id: 'content-calendar',
-    name: 'Content Calendar Manager',
-    category: 'Marketing',
-    description: 'Organize and manage your content calendar',
-    useCases: ['Content planning', 'Team collaboration', 'Publishing schedule'],
-    icon: '📅',
-  },
-  {
-    id: 'support-chatbot',
-    name: 'Customer Support Chatbot',
-    category: 'Support',
-    description: 'AI-powered chatbot for customer support',
-    useCases: ['FAQ automation', 'Ticket routing', '24/7 support'],
-    icon: '🤖',
-  },
-  {
-    id: 'data-entry',
-    name: 'Data Entry Automation',
-    category: 'Operations',
-    description: 'Automate data entry and form processing',
-    useCases: ['Form filling', 'Data validation', 'Database updates'],
-    icon: '📊',
-  },
-  {
-    id: 'report-gen',
-    name: 'Report Generator',
-    category: 'Analytics',
-    description: 'Generate and send automated reports',
-    useCases: ['Daily reports', 'Performance metrics', 'Executive summaries'],
-    icon: '📈',
-  },
-  {
-    id: 'crm-sync',
-    name: 'CRM Integration',
-    category: 'Integration',
-    description: 'Sync data with your CRM automatically',
-    useCases: ['Contact sync', 'Deal tracking', 'Pipeline management'],
-    icon: '🔄',
-  },
-  {
-    id: 'slack-bot',
-    name: 'Slack Bot Integration',
-    category: 'Integration',
-    description: 'Automate notifications and messages in Slack',
-    useCases: ['Team notifications', 'Alert routing', 'Command automation'],
-    icon: '💬',
-  },
-  {
-    id: 'calendar-sync',
-    name: 'Calendar Sync Automation',
-    category: 'Integration',
-    description: 'Sync calendars and schedule meetings automatically',
-    useCases: ['Meeting scheduling', 'Calendar sync', 'Availability management'],
-    icon: '🗓️',
-  },
+  // Email Automation
+  { id: 'email-org', name: 'Email Organization Bot', category: 'Email', description: 'Automatically organize, categorize, and prioritize emails', useCases: ['Inbox management', 'Spam filtering', 'Priority flagging'], icon: '📧' },
+  { id: 'email-follow', name: 'Email Follow-up Automation', category: 'Email', description: 'Send automatic follow-up emails based on triggers', useCases: ['Follow-ups', 'Reminders', 'Engagement'], icon: '📧' },
+  { id: 'email-template', name: 'Email Template Generator', category: 'Email', description: 'Generate and send personalized email templates', useCases: ['Personalization', 'Bulk sending', 'A/B testing'], icon: '📧' },
+  { id: 'email-signature', name: 'Email Signature Manager', category: 'Email', description: 'Automatically add signatures and disclaimers', useCases: ['Branding', 'Compliance', 'Consistency'], icon: '📧' },
+  { id: 'email-unsubscribe', name: 'Unsubscribe List Manager', category: 'Email', description: 'Manage unsubscribe lists automatically', useCases: ['Compliance', 'List hygiene', 'GDPR'], icon: '📧' },
+  
+  // Sales & Lead Generation
+  { id: 'lead-qualify', name: 'Lead Qualification Bot', category: 'Sales', description: 'Score and qualify leads automatically', useCases: ['Lead scoring', 'CRM sync', 'Sales routing'], icon: '🎯' },
+  { id: 'client-onboard', name: 'Client Onboarding Bot', category: 'Sales', description: 'Automate client welcome sequences and documentation', useCases: ['Welcome emails', 'Document collection', 'Account setup'], icon: '👥' },
+  { id: 'sales-pipeline', name: 'Sales Pipeline Automation', category: 'Sales', description: 'Automatically move deals through sales pipeline', useCases: ['Pipeline management', 'Stage tracking', 'Forecasting'], icon: '📈' },
+  { id: 'proposal-gen', name: 'Proposal Generator', category: 'Sales', description: 'Generate proposals automatically from templates', useCases: ['Quick proposals', 'Customization', 'E-signature'], icon: '📄' },
+  { id: 'quote-builder', name: 'Quote Builder Bot', category: 'Sales', description: 'Create and send quotes automatically', useCases: ['Quote generation', 'Pricing rules', 'Approval workflow'], icon: '💵' },
+  { id: 'lead-nurture', name: 'Lead Nurture Sequences', category: 'Sales', description: 'Automated multi-touch lead nurturing campaigns', useCases: ['Drip campaigns', 'Engagement', 'Conversion'], icon: '🔄' },
+  { id: 'sales-alert', name: 'Sales Alert System', category: 'Sales', description: 'Real-time alerts for important sales events', useCases: ['Notifications', 'Urgency', 'Response time'], icon: '🔔' },
+  
+  // Finance & Accounting
+  { id: 'invoice-auto', name: 'Invoice Automation', category: 'Finance', description: 'Generate, send, and track invoices automatically', useCases: ['Invoice generation', 'Payment reminders', 'Expense tracking'], icon: '💰' },
+  { id: 'expense-tracking', name: 'Expense Tracker', category: 'Finance', description: 'Automatically categorize and track expenses', useCases: ['Receipt scanning', 'Categorization', 'Reporting'], icon: '💳' },
+  { id: 'payment-reminder', name: 'Payment Reminder Bot', category: 'Finance', description: 'Send automatic payment reminders', useCases: ['Overdue alerts', 'Follow-ups', 'Collections'], icon: '⏰' },
+  { id: 'receipt-scanner', name: 'Receipt Scanner', category: 'Finance', description: 'Scan and process receipts automatically', useCases: ['Data extraction', 'OCR', 'Categorization'], icon: '🧾' },
+  { id: 'tax-calculator', name: 'Tax Calculator', category: 'Finance', description: 'Calculate taxes automatically', useCases: ['Tax prep', 'Compliance', 'Reporting'], icon: '📊' },
+  { id: 'budget-tracker', name: 'Budget Tracker', category: 'Finance', description: 'Track spending against budgets automatically', useCases: ['Budget alerts', 'Forecasting', 'Analysis'], icon: '💹' },
+  
+  // Marketing & Content
+  { id: 'social-scheduler', name: 'Social Media Scheduler', category: 'Marketing', description: 'Schedule posts across all social platforms', useCases: ['Multi-platform posting', 'Content calendar', 'Engagement tracking'], icon: '📱' },
+  { id: 'content-calendar', name: 'Content Calendar Manager', category: 'Marketing', description: 'Organize and manage your content calendar', useCases: ['Content planning', 'Team collaboration', 'Publishing schedule'], icon: '📅' },
+  { id: 'blog-publisher', name: 'Blog Publisher Bot', category: 'Marketing', description: 'Automatically publish blog posts to multiple platforms', useCases: ['Multi-platform publishing', 'SEO optimization', 'Distribution'], icon: '📝' },
+  { id: 'email-campaign', name: 'Email Campaign Manager', category: 'Marketing', description: 'Create and manage email marketing campaigns', useCases: ['Campaign creation', 'Segmentation', 'Analytics'], icon: '📧' },
+  { id: 'seo-optimizer', name: 'SEO Optimizer', category: 'Marketing', description: 'Optimize content for search engines automatically', useCases: ['Keyword optimization', 'Meta tags', 'Analytics'], icon: '🔍' },
+  { id: 'social-listener', name: 'Social Media Listener', category: 'Marketing', description: 'Monitor brand mentions and sentiment', useCases: ['Brand monitoring', 'Sentiment analysis', 'Alerts'], icon: '👂' },
+  { id: 'landing-page', name: 'Landing Page Builder', category: 'Marketing', description: 'Generate landing pages automatically', useCases: ['A/B testing', 'Conversion optimization', 'Analytics'], icon: '🌐' },
+  { id: 'video-editor', name: 'Video Editor Bot', category: 'Marketing', description: 'Automatically edit and optimize videos', useCases: ['Video creation', 'Thumbnails', 'Captions'], icon: '🎥' },
+  
+  // Customer Support
+  { id: 'support-chatbot', name: 'Customer Support Chatbot', category: 'Support', description: 'AI-powered chatbot for customer support', useCases: ['FAQ automation', 'Ticket routing', '24/7 support'], icon: '🤖' },
+  { id: 'ticket-routing', name: 'Support Ticket Router', category: 'Support', description: 'Automatically route support tickets to right team', useCases: ['Ticket routing', 'Priority assignment', 'SLA tracking'], icon: '🎫' },
+  { id: 'faq-generator', name: 'FAQ Generator', category: 'Support', description: 'Generate FAQs from customer questions', useCases: ['FAQ creation', 'Knowledge base', 'Self-service'], icon: '❓' },
+  { id: 'feedback-collector', name: 'Feedback Collector', category: 'Support', description: 'Automatically collect customer feedback', useCases: ['Surveys', 'NPS tracking', 'Sentiment analysis'], icon: '⭐' },
+  { id: 'knowledge-base', name: 'Knowledge Base Manager', category: 'Support', description: 'Organize and manage knowledge base articles', useCases: ['Documentation', 'Search optimization', 'Versioning'], icon: '📚' },
+  
+  // Operations & Data
+  { id: 'data-entry', name: 'Data Entry Automation', category: 'Operations', description: 'Automate data entry and form processing', useCases: ['Form filling', 'Data validation', 'Database updates'], icon: '📊' },
+  { id: 'database-sync', name: 'Database Sync Bot', category: 'Operations', description: 'Sync data across multiple databases', useCases: ['Data sync', 'Consistency', 'Real-time updates'], icon: '🔗' },
+  { id: 'workflow-automation', name: 'Workflow Automation', category: 'Operations', description: 'Automate complex business workflows', useCases: ['Process automation', 'Approval workflows', 'Task routing'], icon: '⚙️' },
+  { id: 'document-processor', name: 'Document Processor', category: 'Operations', description: 'Process and extract data from documents', useCases: ['OCR', 'Data extraction', 'Classification'], icon: '📄' },
+  { id: 'backup-manager', name: 'Backup Manager', category: 'Operations', description: 'Automatically backup important data', useCases: ['Data backup', 'Disaster recovery', 'Compliance'], icon: '💾' },
+  { id: 'inventory-tracker', name: 'Inventory Tracker', category: 'Operations', description: 'Automatically track inventory levels', useCases: ['Stock alerts', 'Reorder automation', 'Forecasting'], icon: '📦' },
+  
+  // Analytics & Reporting
+  { id: 'report-gen', name: 'Report Generator', category: 'Analytics', description: 'Generate and send automated reports', useCases: ['Daily reports', 'Performance metrics', 'Executive summaries'], icon: '📈' },
+  { id: 'dashboard-builder', name: 'Dashboard Builder', category: 'Analytics', description: 'Create automated dashboards', useCases: ['Real-time dashboards', 'KPI tracking', 'Visualization'], icon: '📊' },
+  { id: 'analytics-tracker', name: 'Analytics Tracker', category: 'Analytics', description: 'Track and analyze business metrics', useCases: ['Metrics tracking', 'Trend analysis', 'Alerts'], icon: '📉' },
+  { id: 'data-visualization', name: 'Data Visualization', category: 'Analytics', description: 'Automatically create data visualizations', useCases: ['Charts', 'Graphs', 'Infographics'], icon: '📊' },
+  { id: 'predictive-analytics', name: 'Predictive Analytics', category: 'Analytics', description: 'Predict trends and outcomes', useCases: ['Forecasting', 'Trend prediction', 'Risk analysis'], icon: '🔮' },
+  
+  // Integrations & Connections
+  { id: 'crm-sync', name: 'CRM Integration', category: 'Integration', description: 'Sync data with your CRM automatically', useCases: ['Contact sync', 'Deal tracking', 'Pipeline management'], icon: '🔄' },
+  { id: 'slack-bot', name: 'Slack Bot Integration', category: 'Integration', description: 'Automate notifications and messages in Slack', useCases: ['Team notifications', 'Alert routing', 'Command automation'], icon: '💬' },
+  { id: 'calendar-sync', name: 'Calendar Sync Automation', category: 'Integration', description: 'Sync calendars and schedule meetings automatically', useCases: ['Meeting scheduling', 'Calendar sync', 'Availability management'], icon: '🗓️' },
+  { id: 'zapier-integration', name: 'Zapier Integration', category: 'Integration', description: 'Connect to 5000+ apps via Zapier', useCases: ['App connections', 'Workflow automation', 'Data sync'], icon: '⚡' },
+  { id: 'webhook-setup', name: 'Webhook Setup', category: 'Integration', description: 'Set up webhooks for real-time data', useCases: ['Real-time updates', 'Event triggers', 'Custom integrations'], icon: '🔗' },
+  { id: 'api-connector', name: 'API Connector', category: 'Integration', description: 'Connect to any API automatically', useCases: ['Custom integrations', 'Data exchange', 'Third-party services'], icon: '🔌' },
+  { id: 'shopify-sync', name: 'Shopify Integration', category: 'Integration', description: 'Sync Shopify store data automatically', useCases: ['Order sync', 'Inventory sync', 'Customer data'], icon: '🛍️' },
+  { id: 'stripe-sync', name: 'Stripe Integration', category: 'Integration', description: 'Sync Stripe payment data', useCases: ['Payment tracking', 'Invoice sync', 'Customer data'], icon: '💳' },
+  
+  // HR & People
+  { id: 'hr-onboarding', name: 'HR Onboarding Bot', category: 'HR', description: 'Automate employee onboarding', useCases: ['New hire setup', 'Document collection', 'Training'], icon: '👔' },
+  { id: 'attendance-tracker', name: 'Attendance Tracker', category: 'HR', description: 'Automatically track employee attendance', useCases: ['Time tracking', 'Attendance reports', 'Payroll'], icon: '⏱️' },
+  { id: 'payroll-processor', name: 'Payroll Processor', category: 'HR', description: 'Automate payroll processing', useCases: ['Salary calculation', 'Tax withholding', 'Direct deposit'], icon: '💸' },
+  { id: 'performance-review', name: 'Performance Review Bot', category: 'HR', description: 'Automate performance reviews', useCases: ['Review scheduling', 'Feedback collection', 'Analytics'], icon: '⭐' },
+  { id: 'leave-management', name: 'Leave Management', category: 'HR', description: 'Manage employee leave automatically', useCases: ['Leave requests', 'Approval workflow', 'Balance tracking'], icon: '🏖️' },
+  
+  // Custom & Advanced
+  { id: 'custom-workflow', name: 'Custom Workflow Builder', category: 'Custom', description: 'Build custom automation workflows', useCases: ['Custom logic', 'Complex automation', 'Business rules'], icon: '🛠️' },
+  { id: 'ai-training', name: 'AI Model Training', category: 'Custom', description: 'Train custom AI models for your business', useCases: ['Custom AI', 'Prediction models', 'Classification'], icon: '🧠' },
+  { id: 'advanced-scripting', name: 'Advanced Scripting', category: 'Custom', description: 'Write custom scripts for automation', useCases: ['Custom code', 'Advanced logic', 'Integration'], icon: '⚙️' },
+  { id: 'multi-language', name: 'Multi-Language Support', category: 'Custom', description: 'Automate in multiple languages', useCases: ['Translation', 'Localization', 'Global reach'], icon: '🌍' },
+  { id: 'security-setup', name: 'Security & Encryption', category: 'Custom', description: 'Set up security and encryption', useCases: ['Data protection', 'Compliance', 'Privacy'], icon: '🔒' },
 ];
 
 const TIER_LIMITS = {
@@ -124,7 +107,7 @@ const TIER_LIMITS = {
   enterprise: 10,
 };
 
-const CATEGORIES = ['Email', 'Sales', 'Finance', 'Marketing', 'Support', 'Operations', 'Analytics', 'Integration'];
+const CATEGORIES = ['Email', 'Sales', 'Finance', 'Marketing', 'Support', 'Operations', 'Analytics', 'Integration', 'HR', 'Custom'];
 
 export function AddonsModal({ isOpen, tier, onClose, onSelect, stripeLink }: AddonsModalProps) {
   const [selectedAddons, setSelectedAddons] = useState<Set<string>>(new Set());
