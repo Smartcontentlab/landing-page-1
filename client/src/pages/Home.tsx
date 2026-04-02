@@ -339,7 +339,7 @@ export default function Home() {
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span className="text-slate-700">1-hour consultation</span>
+                    <span className="text-slate-700">30-min consultation</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500" />
@@ -353,6 +353,10 @@ export default function Home() {
                     <CheckCircle className="w-5 h-5 text-green-500" />
                     <span className="text-slate-700">Choose 5 add-ons</span>
                   </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    <span className="text-slate-700">Ongoing tweaks via messaging</span>
+                  </li>
                 </ul>
                 <button
                   onClick={() => handleTierSelect('professional')}
@@ -365,7 +369,7 @@ export default function Home() {
               {/* Enterprise */}
               <div className="border-2 border-slate-200 rounded-xl p-8 hover:border-blue-600 transition">
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">Enterprise</h3>
-                <p className="text-slate-600 mb-6">For complex needs</p>
+                <p className="text-slate-600 mb-6">For power users</p>
                 <div className="mb-6">
                   <span className="text-4xl font-bold text-slate-900">$1,497</span>
                   <p className="text-slate-600 text-sm mt-2">One-time investment</p>
@@ -373,11 +377,11 @@ export default function Home() {
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span className="text-slate-700">2-hour consultation</span>
+                    <span className="text-slate-700">30-min consultation</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span className="text-slate-700">Comprehensive solution</span>
+                    <span className="text-slate-700">Premium implementation</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500" />
@@ -386,6 +390,10 @@ export default function Home() {
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500" />
                     <span className="text-slate-700">Choose 10 add-ons</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    <span className="text-slate-700">Unlimited edits & tweaks</span>
                   </li>
                 </ul>
                 <button
@@ -423,17 +431,19 @@ export default function Home() {
         </section>
 
         {/* Calendly Section */}
-        <section className="py-20 bg-white">
+        <section className="py-12 bg-white">
           <div className="container mx-auto px-4 max-w-2xl">
-            <h2 className="text-4xl font-bold mb-4 text-center text-slate-900">Schedule Your Free Consultation</h2>
-            <p className="text-center text-slate-600 mb-12">
+            <h2 className="text-3xl font-bold mb-2 text-center text-slate-900">Schedule Your Free Consultation</h2>
+            <p className="text-center text-slate-600 mb-8 text-sm">
               Get a personalized assessment of your automation needs. No credit card required.
             </p>
-            <div
-              className="calendly-inline-widget"
-              data-url="https://calendly.com/adminscsf/15min?hide_event_type_details=1&hide_gdpr_block=1"
-              style={{ minWidth: '320px', height: '630px' }}
-            />
+            <div className="flex justify-center">
+              <div
+                className="calendly-inline-widget"
+                data-url="https://calendly.com/adminscsf/15min?hide_event_type_details=1&hide_gdpr_block=1"
+                style={{ minWidth: '280px', height: '400px' }}
+              />
+            </div>
           </div>
         </section>
 
