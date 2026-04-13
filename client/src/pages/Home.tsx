@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { WorkflowBuilder } from "@/components/WorkflowBuilder";
 import { AddonsModal } from "@/components/AddonsModal";
 import { ConsultationPopup } from "@/components/ConsultationPopup";
+import { VideoModal } from "@/components/VideoModal";
 
 export default function Home() {
   const { user, loading, error, isAuthenticated, logout } = useAuth();
@@ -12,6 +13,7 @@ export default function Home() {
   const [isAddonsModalOpen, setIsAddonsModalOpen] = useState(false);
   const [isConsultationPopupOpen, setIsConsultationPopupOpen] = useState(false);
   const [showConsultationPopupAfterDelay, setShowConsultationPopupAfterDelay] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   // Stripe payment links
   const stripeLinks = {
@@ -161,15 +163,13 @@ export default function Home() {
                   >
                     Schedule Free Consultation
                   </button>
-                  <a
-                    href="https://cdn.manus.space/webdev-static-assets/workflow-builder-demo.mp4"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg font-bold text-lg hover:border-slate-400 hover:bg-slate-50 transition"
+                  <button
+                    onClick={() => setIsVideoModalOpen(true)}
+                    className="inline-flex items-center justify-center border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg font-bold text-lg hover:border-slate-400 hover:bg-slate-50 transition cursor-pointer"
                   >
                     Watch Demo
                     <ArrowRight className="ml-2 w-5 h-5" />
-                  </a>
+                  </button>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-slate-600">
                   <CheckCircle className="w-5 h-5 text-green-500" />
@@ -529,6 +529,12 @@ export default function Home() {
         }}
         onYes={handleConsultationYes}
         onScheduleZoom={handleScheduleZoom}
+      />
+      <VideoModal
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+        videoUrl="https://cdn.manus.space/webdev-static-assets/workflow-builder-demo.mp4"
+        title="AI Automation Workflow Builder Demo"
       />
     </div>
   );
